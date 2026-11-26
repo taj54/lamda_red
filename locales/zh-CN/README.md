@@ -78,7 +78,7 @@ lmdred --version
 | `input.zz` | UTF-8 编码的 Drizzle 源文件路径 | 当前目录中的 `sample.zz` |
 | `output-stem` | 未附加 `.png` 和 `.xml` 扩展名的输出路径 | 当前目录中的 `output` |
 | `-h`, `--help` | 显示命令行帮助 |  |
-| `-V`, `--version` | 显示编译器版本，例如 `lmdred 1.2.0` |  |
+| `-V`, `--version` | 显示编译器版本，例如 `lmdred 1.2.1` |  |
 | `--` | 将后续参数作为文件路径处理 |  |
 
 <a name="output-paths"></a>
@@ -360,7 +360,7 @@ Recover __> Login [zigzag] via right : A non-user might gain access
 
 ## 安装
 
-发布工作流上传文件后，以下命令会下载编译器版本 `lmdred-v1.2.0`。
+发布工作流上传文件后，以下命令会下载编译器版本 `lmdred-v1.2.1`。
 
 安装程序会选择 x64 或 ARM64，下载归档和 SHA-256 校验值，验证归档，并在当前用户账户下安装 `lmdred`。重新运行安装程序即可升级或修复。
 
@@ -371,14 +371,14 @@ Recover __> Login [zigzag] via right : A non-user might gain access
 用 curl 下载并运行 Shell 安装脚本。
 
 ```sh
-curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -o install-lmdred.sh
+curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -o install-lmdred.sh
 sh install-lmdred.sh
 ```
 
 也可使用 wget 下载。
 
 ```sh
-wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -O install-lmdred.sh
+wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -O install-lmdred.sh
 sh install-lmdred.sh
 ```
 
@@ -392,7 +392,7 @@ lmdred --version
 使用下列选项选择版本或安装目录。
 
 ```sh
-sh install-lmdred.sh --version 1.2.0 --bin-dir "$HOME/.local/bin"
+sh install-lmdred.sh --version 1.2.1 --bin-dir "$HOME/.local/bin"
 sh install-lmdred.sh --no-modify-path
 ```
 
@@ -406,7 +406,7 @@ sh install-lmdred.sh --no-modify-path
 
 ```powershell
 $installer = Join-Path $env:TEMP 'install-lmdred.ps1'
-Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.ps1' -OutFile $installer
+Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.ps1' -OutFile $installer
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 ```
 
@@ -415,7 +415,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 使用以下选项选择其他位置或自行管理 PATH。
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.0 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
+powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.1 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer -NoModifyPath
 ```
 
@@ -429,12 +429,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File $installer -NoModifyPath
 
 | 系统 | 处理器 | 发行归档 |
 | --- | --- | --- |
-| Windows | x64 | `lmdred-v1.2.0-x86_64-pc-windows-msvc.zip` |
-| Windows | ARM64 | `lmdred-v1.2.0-aarch64-pc-windows-msvc.zip` |
-| macOS | Intel | `lmdred-v1.2.0-x86_64-apple-darwin.tar.gz` |
-| macOS | Apple Silicon | `lmdred-v1.2.0-aarch64-apple-darwin.tar.gz` |
-| Linux | x64 | `lmdred-v1.2.0-x86_64-unknown-linux-musl.tar.gz` |
-| Linux | ARM64 | `lmdred-v1.2.0-aarch64-unknown-linux-musl.tar.gz` |
+| Windows | x64 | `lmdred-v1.2.1-x86_64-pc-windows-msvc.zip` |
+| Windows | ARM64 | `lmdred-v1.2.1-aarch64-pc-windows-msvc.zip` |
+| macOS | Intel | `lmdred-v1.2.1-x86_64-apple-darwin.tar.gz` |
+| macOS | Apple Silicon | `lmdred-v1.2.1-aarch64-apple-darwin.tar.gz` |
+| Linux | x64 | `lmdred-v1.2.1-x86_64-unknown-linux-musl.tar.gz` |
+| Linux | ARM64 | `lmdred-v1.2.1-aarch64-unknown-linux-musl.tar.gz` |
 
 Linux 发行版使用 musl，支持基于 glibc 和 musl 的发行版。Windows 发行版静态链接 C 运行库。渲染使用系统字体。在精简 Linux 服务器或容器中，请安装 DejaVu Sans 等无衬线字体。
 
@@ -600,8 +600,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\package-releas
 ```sh
 git switch main
 git pull origin main
-git tag lmdred-v1.2.0
-git push origin lmdred-v1.2.0
+git tag lmdred-v1.2.1
+git push origin lmdred-v1.2.1
 ```
 
 推送该标签会触发 [`.github/workflows/release-cli.yml`](../../.github/workflows/release-cli.yml)，工作流会校验标签是否与 `Cargo.toml` 及两个安装脚本一致，并在所有构建通过后创建编译器发行版。在 GitHub 上使用同一标签手动发布也会启动工作流并附加产物。**Run workflow** 按钮为所选分支构建可下载的 Actions 产物。

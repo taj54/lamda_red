@@ -92,7 +92,7 @@ lmdred --version
 | `input.zz` | مسار ملف Drizzle بترميز UTF-8 | `sample.zz` في الدليل الحالي |
 | `output-stem` | مسار الإخراج قبل إلحاق الامتدادين `.png` و`.xml` | `output` في الدليل الحالي |
 | `-h`, `--help` | عرض مساعدة سطر الأوامر |  |
-| `-V`, `--version` | عرض إصدار المُصرّف، مثل `lmdred 1.2.0` |  |
+| `-V`, `--version` | عرض إصدار المُصرّف، مثل `lmdred 1.2.1` |  |
 | `--` | معاملة الوسائط المتبقية كمسارات ملفات |  |
 
 <a name="output-paths"></a>
@@ -402,7 +402,7 @@ Recover __> Login [zigzag] via right : A non-user might gain access
 
 ## التثبيت
 
-تنزّل الأوامر أدناه إصدار المُصرّف `lmdred-v1.2.0` بعد أن يرفع سير عمل النشر ملفاته.
+تنزّل الأوامر أدناه إصدار المُصرّف `lmdred-v1.2.1` بعد أن يرفع سير عمل النشر ملفاته.
 
 تختار برامج التثبيت x64 أو ARM64، وتُنزّل الأرشيف وقيمة تحقق SHA-256 وتتحقق منه، ثم تثبّت `lmdred` في حساب المستخدم. أعد تشغيل برنامج التثبيت للترقية أو لإصلاح التثبيت.
 
@@ -415,7 +415,7 @@ Recover __> Login [zigzag] via right : A non-user might gain access
 <div dir="ltr">
 
 ```sh
-curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -o install-lmdred.sh
+curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -o install-lmdred.sh
 sh install-lmdred.sh
 ```
 
@@ -426,7 +426,7 @@ sh install-lmdred.sh
 <div dir="ltr">
 
 ```sh
-wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -O install-lmdred.sh
+wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -O install-lmdred.sh
 sh install-lmdred.sh
 ```
 
@@ -448,7 +448,7 @@ lmdred --version
 <div dir="ltr">
 
 ```sh
-sh install-lmdred.sh --version 1.2.0 --bin-dir "$HOME/.local/bin"
+sh install-lmdred.sh --version 1.2.1 --bin-dir "$HOME/.local/bin"
 sh install-lmdred.sh --no-modify-path
 ```
 
@@ -466,7 +466,7 @@ sh install-lmdred.sh --no-modify-path
 
 ```powershell
 $installer = Join-Path $env:TEMP 'install-lmdred.ps1'
-Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.ps1' -OutFile $installer
+Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.ps1' -OutFile $installer
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 ```
 
@@ -479,7 +479,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 <div dir="ltr">
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.0 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
+powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.1 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer -NoModifyPath
 ```
 
@@ -495,12 +495,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File $installer -NoModifyPath
 
 | النظام | المعالج | أرشيف الإصدار |
 | --- | --- | --- |
-| Windows | x64 | `lmdred-v1.2.0-x86_64-pc-windows-msvc.zip` |
-| Windows | ARM64 | `lmdred-v1.2.0-aarch64-pc-windows-msvc.zip` |
-| macOS | Intel | `lmdred-v1.2.0-x86_64-apple-darwin.tar.gz` |
-| macOS | Apple Silicon | `lmdred-v1.2.0-aarch64-apple-darwin.tar.gz` |
-| Linux | x64 | `lmdred-v1.2.0-x86_64-unknown-linux-musl.tar.gz` |
-| Linux | ARM64 | `lmdred-v1.2.0-aarch64-unknown-linux-musl.tar.gz` |
+| Windows | x64 | `lmdred-v1.2.1-x86_64-pc-windows-msvc.zip` |
+| Windows | ARM64 | `lmdred-v1.2.1-aarch64-pc-windows-msvc.zip` |
+| macOS | Intel | `lmdred-v1.2.1-x86_64-apple-darwin.tar.gz` |
+| macOS | Apple Silicon | `lmdred-v1.2.1-aarch64-apple-darwin.tar.gz` |
+| Linux | x64 | `lmdred-v1.2.1-x86_64-unknown-linux-musl.tar.gz` |
+| Linux | ARM64 | `lmdred-v1.2.1-aarch64-unknown-linux-musl.tar.gz` |
 
 تستخدم ملفات Linux مكتبة musl لدعم توزيعات glibc وmusl. تُربط مكتبة تشغيل C ربطًا ساكنًا في إصدارات Windows. يعتمد الرسم على خطوط النظام. على خادم Linux مصغّر أو في حاوية، ثبّت خطًا بلا زوائد مثل DejaVu Sans.
 
@@ -712,8 +712,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\package-releas
 ```sh
 git switch main
 git pull origin main
-git tag lmdred-v1.2.0
-git push origin lmdred-v1.2.0
+git tag lmdred-v1.2.1
+git push origin lmdred-v1.2.1
 ```
 
 </div>

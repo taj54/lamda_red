@@ -92,7 +92,7 @@ lmdred --version
 | `input.zz` | مسیر فایل سورس UTF-8 در Drizzle | `sample.zz` در دایرکتوری جاری |
 | `output-stem` | مسیر خروجی پیش از افزودن پسوندهای `.png` و `.xml` | `output` در دایرکتوری جاری |
 | `-h`, `--help` | نمایش راهنمای خط فرمان |  |
-| `-V`, `--version` | نمایش نسخهٔ کامپایلر، مانند `lmdred 1.2.0` |  |
+| `-V`, `--version` | نمایش نسخهٔ کامپایلر، مانند `lmdred 1.2.1` |  |
 | `--` | تفسیر آرگومان‌های باقی‌مانده به‌عنوان مسیر فایل |  |
 
 <a name="output-paths"></a>
@@ -402,7 +402,7 @@ Recover __> Login [zigzag] via right : A non-user might gain access
 
 ## نصب
 
-دستورهای زیر پس از بارگذاری فایل‌ها، ریلیز کامپایلر `lmdred-v1.2.0` را دانلود می‌کنند.
+دستورهای زیر پس از بارگذاری فایل‌ها، ریلیز کامپایلر `lmdred-v1.2.1` را دانلود می‌کنند.
 
 نصب‌کننده‌ها معماری x64 یا ARM64 را تشخیص می‌دهند، آرشیو و چک‌سام SHA-256 آن را دانلود و اعتبارسنجی می‌کنند و `lmdred` را در حساب کاربری نصب می‌کنند. برای ارتقا یا تعمیر نصب، نصب‌کننده را دوباره اجرا کنید.
 
@@ -415,7 +415,7 @@ Recover __> Login [zigzag] via right : A non-user might gain access
 <div dir="ltr">
 
 ```sh
-curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -o install-lmdred.sh
+curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -o install-lmdred.sh
 sh install-lmdred.sh
 ```
 
@@ -426,7 +426,7 @@ sh install-lmdred.sh
 <div dir="ltr">
 
 ```sh
-wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -O install-lmdred.sh
+wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -O install-lmdred.sh
 sh install-lmdred.sh
 ```
 
@@ -448,7 +448,7 @@ lmdred --version
 <div dir="ltr">
 
 ```sh
-sh install-lmdred.sh --version 1.2.0 --bin-dir "$HOME/.local/bin"
+sh install-lmdred.sh --version 1.2.1 --bin-dir "$HOME/.local/bin"
 sh install-lmdred.sh --no-modify-path
 ```
 
@@ -466,7 +466,7 @@ sh install-lmdred.sh --no-modify-path
 
 ```powershell
 $installer = Join-Path $env:TEMP 'install-lmdred.ps1'
-Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.ps1' -OutFile $installer
+Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.ps1' -OutFile $installer
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 ```
 
@@ -479,7 +479,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 <div dir="ltr">
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.0 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
+powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.1 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer -NoModifyPath
 ```
 
@@ -495,12 +495,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File $installer -NoModifyPath
 
 | سیستم | پردازنده | آرشیو انتشار |
 | --- | --- | --- |
-| Windows | x64 | `lmdred-v1.2.0-x86_64-pc-windows-msvc.zip` |
-| Windows | ARM64 | `lmdred-v1.2.0-aarch64-pc-windows-msvc.zip` |
-| macOS | Intel | `lmdred-v1.2.0-x86_64-apple-darwin.tar.gz` |
-| macOS | Apple Silicon | `lmdred-v1.2.0-aarch64-apple-darwin.tar.gz` |
-| Linux | x64 | `lmdred-v1.2.0-x86_64-unknown-linux-musl.tar.gz` |
-| Linux | ARM64 | `lmdred-v1.2.0-aarch64-unknown-linux-musl.tar.gz` |
+| Windows | x64 | `lmdred-v1.2.1-x86_64-pc-windows-msvc.zip` |
+| Windows | ARM64 | `lmdred-v1.2.1-aarch64-pc-windows-msvc.zip` |
+| macOS | Intel | `lmdred-v1.2.1-x86_64-apple-darwin.tar.gz` |
+| macOS | Apple Silicon | `lmdred-v1.2.1-aarch64-apple-darwin.tar.gz` |
+| Linux | x64 | `lmdred-v1.2.1-x86_64-unknown-linux-musl.tar.gz` |
+| Linux | ARM64 | `lmdred-v1.2.1-aarch64-unknown-linux-musl.tar.gz` |
 
 فایل‌های انتشار لینوکس از musl استفاده می‌کنند و در توزیع‌های glibc و musl اجرا می‌شوند. بیلد ویندوز به‌صورت ایستا به کتابخانهٔ زمان اجرای C پیوند می‌خورد. رندر از فونت‌های سیستم استفاده می‌کند. روی سرور یا کانتینر حداقلی لینوکس فونتی بدون سریف مانند DejaVu Sans نصب کنید.
 
@@ -712,8 +712,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\package-releas
 ```sh
 git switch main
 git pull origin main
-git tag lmdred-v1.2.0
-git push origin lmdred-v1.2.0
+git tag lmdred-v1.2.1
+git push origin lmdred-v1.2.1
 ```
 
 </div>
