@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.2.1 2026-11-26
+
+### Added
+
+- add version bump workflow for automated version management
+
+### Changed
+
+- version bump refactor
+- prepare CLI release files and document tagging
+- add dev docs, contribution guide, and CoC #2
+- add the first output of lmdred vsc extension
+- update the authentication risk diagram and privacy goal
+- clarify Lamda RED's purpose and show how to use it
+- change pkg name
+
 ## 1.2.0
 
 - Add `--export-set` to write editable mxGraph XML and compact, document,

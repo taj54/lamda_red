@@ -78,7 +78,7 @@ lmdred --version
 | `input.zz` | Pfad einer UTF-8-Drizzle-Quelldatei | `sample.zz` im aktuellen Verzeichnis |
 | `output-stem` | Ausgabepfad vor den angehängten Endungen `.png` und `.xml` | `output` im aktuellen Verzeichnis |
 | `-h`, `--help` | Kommandozeilenhilfe ausgeben |  |
-| `-V`, `--version` | Compilerversion ausgeben, zum Beispiel `lmdred 1.2.0` |  |
+| `-V`, `--version` | Compilerversion ausgeben, zum Beispiel `lmdred 1.2.1` |  |
 | `--` | Restliche Argumente als Dateipfade behandeln |  |
 
 <a name="output-paths"></a>
@@ -360,7 +360,7 @@ Die VS-Code-Erweiterung in `drizzle/` hebt die Syntax von `.zz`, `.drizzle` und 
 
 ## Installation
 
-Die folgenden Befehle laden das Compiler-Release `lmdred-v1.2.0`, sobald der Workflow seine Dateien hochgeladen hat.
+Die folgenden Befehle laden das Compiler-Release `lmdred-v1.2.1`, sobald der Workflow seine Dateien hochgeladen hat.
 
 Die Installer wählen x64 oder ARM64, laden Archiv und SHA-256-Prüfsumme herunter, prüfen das Archiv und installieren `lmdred` im Benutzerkonto. Führen Sie den Installer für ein Upgrade oder eine Reparatur erneut aus.
 
@@ -371,14 +371,14 @@ Die Installer wählen x64 oder ARM64, laden Archiv und SHA-256-Prüfsumme herunt
 Laden Sie das Shell-Installationsskript mit curl herunter und führen Sie es aus.
 
 ```sh
-curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -o install-lmdred.sh
+curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -o install-lmdred.sh
 sh install-lmdred.sh
 ```
 
 Zum Herunterladen können Sie auch wget verwenden.
 
 ```sh
-wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -O install-lmdred.sh
+wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -O install-lmdred.sh
 sh install-lmdred.sh
 ```
 
@@ -392,7 +392,7 @@ lmdred --version
 Wählen Sie die Version oder das Installationsverzeichnis mit diesen Optionen.
 
 ```sh
-sh install-lmdred.sh --version 1.2.0 --bin-dir "$HOME/.local/bin"
+sh install-lmdred.sh --version 1.2.1 --bin-dir "$HOME/.local/bin"
 sh install-lmdred.sh --no-modify-path
 ```
 
@@ -406,7 +406,7 @@ Laden Sie den Installer über PowerShell herunter und führen Sie ihn aus.
 
 ```powershell
 $installer = Join-Path $env:TEMP 'install-lmdred.ps1'
-Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.ps1' -OutFile $installer
+Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.ps1' -OutFile $installer
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 ```
 
@@ -415,7 +415,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 Wählen Sie mit diesen Optionen einen anderen Pfad oder konfigurieren Sie PATH selbst.
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.0 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
+powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.1 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer -NoModifyPath
 ```
 
@@ -429,12 +429,12 @@ Entpacken Sie das passende Archiv und legen Sie die ausführbare Datei in einem 
 
 | System | Prozessor | Release-Archiv |
 | --- | --- | --- |
-| Windows | x64 | `lmdred-v1.2.0-x86_64-pc-windows-msvc.zip` |
-| Windows | ARM64 | `lmdred-v1.2.0-aarch64-pc-windows-msvc.zip` |
-| macOS | Intel | `lmdred-v1.2.0-x86_64-apple-darwin.tar.gz` |
-| macOS | Apple Silicon | `lmdred-v1.2.0-aarch64-apple-darwin.tar.gz` |
-| Linux | x64 | `lmdred-v1.2.0-x86_64-unknown-linux-musl.tar.gz` |
-| Linux | ARM64 | `lmdred-v1.2.0-aarch64-unknown-linux-musl.tar.gz` |
+| Windows | x64 | `lmdred-v1.2.1-x86_64-pc-windows-msvc.zip` |
+| Windows | ARM64 | `lmdred-v1.2.1-aarch64-pc-windows-msvc.zip` |
+| macOS | Intel | `lmdred-v1.2.1-x86_64-apple-darwin.tar.gz` |
+| macOS | Apple Silicon | `lmdred-v1.2.1-aarch64-apple-darwin.tar.gz` |
+| Linux | x64 | `lmdred-v1.2.1-x86_64-unknown-linux-musl.tar.gz` |
+| Linux | ARM64 | `lmdred-v1.2.1-aarch64-unknown-linux-musl.tar.gz` |
 
 Linux-Release-Dateien verwenden musl für Distributionen mit glibc und musl. Windows-Builds binden die C-Laufzeit statisch ein. Die Diagrammausgabe nutzt Systemschriften. Installieren Sie in minimalen Linux-Servern oder -Containern eine serifenlose Schrift wie DejaVu Sans.
 
@@ -600,8 +600,8 @@ Der Release-Workflow baut und testet native x64- und ARM64-Dateien für Windows,
 ```sh
 git switch main
 git pull origin main
-git tag lmdred-v1.2.0
-git push origin lmdred-v1.2.0
+git tag lmdred-v1.2.1
+git push origin lmdred-v1.2.1
 ```
 
 Das Pushen des Tags startet [`.github/workflows/release-cli.yml`](../../.github/workflows/release-cli.yml), das das Tag mit `Cargo.toml` und beiden Installern abgleicht und nach erfolgreichen Builds das Compiler-Release erstellt. Auch ein manuell veröffentlichtes GitHub-Release mit demselben Compiler-Tag startet den Workflow und hängt dessen Dateien an das Release an. **Run workflow** erzeugt herunterladbare Actions-Artefakte für den gewählten Branch.

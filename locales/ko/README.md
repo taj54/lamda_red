@@ -78,7 +78,7 @@ lmdred --version
 | `input.zz` | UTF-8 Drizzle 소스 파일 경로 | 현재 디렉터리의 `sample.zz` |
 | `output-stem` | `.png` 및 `.xml` 확장자를 붙이기 전의 출력 경로 | 현재 디렉터리의 `output` |
 | `-h`, `--help` | 명령줄 도움말 표시 |  |
-| `-V`, `--version` | 컴파일러 버전 표시. 예를 들어 `lmdred 1.2.0` |  |
+| `-V`, `--version` | 컴파일러 버전 표시. 예를 들어 `lmdred 1.2.1` |  |
 | `--` | 남은 인수를 파일 경로로 처리 |  |
 
 <a name="output-paths"></a>
@@ -360,7 +360,7 @@ Recover __> Login [zigzag] via right : A non-user might gain access
 
 ## 설치
 
-릴리스 워크플로가 파일을 업로드한 뒤 아래 명령으로 컴파일러 릴리스 `lmdred-v1.2.0`를 다운로드할 수 있습니다.
+릴리스 워크플로가 파일을 업로드한 뒤 아래 명령으로 컴파일러 릴리스 `lmdred-v1.2.1`를 다운로드할 수 있습니다.
 
 설치 프로그램은 x64 또는 ARM64를 선택하고 압축 파일과 SHA-256 체크섬을 다운로드해 검증한 뒤 사용자 계정에 `lmdred`를 설치합니다. 업그레이드하거나 설치를 복구하려면 다시 실행합니다.
 
@@ -371,14 +371,14 @@ Recover __> Login [zigzag] via right : A non-user might gain access
 curl로 셸 설치 스크립트를 내려받아 실행합니다.
 
 ```sh
-curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -o install-lmdred.sh
+curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -o install-lmdred.sh
 sh install-lmdred.sh
 ```
 
 wget으로도 내려받을 수 있습니다.
 
 ```sh
-wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -O install-lmdred.sh
+wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -O install-lmdred.sh
 sh install-lmdred.sh
 ```
 
@@ -392,7 +392,7 @@ lmdred --version
 다음 옵션으로 버전 또는 설치 경로를 선택합니다.
 
 ```sh
-sh install-lmdred.sh --version 1.2.0 --bin-dir "$HOME/.local/bin"
+sh install-lmdred.sh --version 1.2.1 --bin-dir "$HOME/.local/bin"
 sh install-lmdred.sh --no-modify-path
 ```
 
@@ -406,7 +406,7 @@ PowerShell에서 설치 프로그램을 내려받아 실행합니다.
 
 ```powershell
 $installer = Join-Path $env:TEMP 'install-lmdred.ps1'
-Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.ps1' -OutFile $installer
+Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.ps1' -OutFile $installer
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 ```
 
@@ -415,7 +415,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 다른 경로를 선택하거나 PATH를 직접 관리하려면 다음 옵션을 사용합니다.
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.0 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
+powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.1 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer -NoModifyPath
 ```
 
@@ -429,12 +429,12 @@ Windows에서도 `LMDRED_VERSION` 및 `LMDRED_INSTALL_DIR`로 기본값을 설�
 
 | 시스템 | 프로세서 | 릴리스 압축 파일 |
 | --- | --- | --- |
-| Windows | x64 | `lmdred-v1.2.0-x86_64-pc-windows-msvc.zip` |
-| Windows | ARM64 | `lmdred-v1.2.0-aarch64-pc-windows-msvc.zip` |
-| macOS | Intel | `lmdred-v1.2.0-x86_64-apple-darwin.tar.gz` |
-| macOS | Apple Silicon | `lmdred-v1.2.0-aarch64-apple-darwin.tar.gz` |
-| Linux | x64 | `lmdred-v1.2.0-x86_64-unknown-linux-musl.tar.gz` |
-| Linux | ARM64 | `lmdred-v1.2.0-aarch64-unknown-linux-musl.tar.gz` |
+| Windows | x64 | `lmdred-v1.2.1-x86_64-pc-windows-msvc.zip` |
+| Windows | ARM64 | `lmdred-v1.2.1-aarch64-pc-windows-msvc.zip` |
+| macOS | Intel | `lmdred-v1.2.1-x86_64-apple-darwin.tar.gz` |
+| macOS | Apple Silicon | `lmdred-v1.2.1-aarch64-apple-darwin.tar.gz` |
+| Linux | x64 | `lmdred-v1.2.1-x86_64-unknown-linux-musl.tar.gz` |
+| Linux | ARM64 | `lmdred-v1.2.1-aarch64-unknown-linux-musl.tar.gz` |
 
 Linux 릴리스는 glibc와 musl 배포판에서 실행되도록 musl을 사용합니다. Windows 릴리스는 C 런타임을 정적으로 링크합니다. 렌더링에는 시스템 글꼴을 사용합니다. 최소 구성의 Linux 서버나 컨테이너에는 DejaVu Sans 같은 산세리프 글꼴을 설치합니다.
 
@@ -600,8 +600,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\package-releas
 ```sh
 git switch main
 git pull origin main
-git tag lmdred-v1.2.0
-git push origin lmdred-v1.2.0
+git tag lmdred-v1.2.1
+git push origin lmdred-v1.2.1
 ```
 
 이 태그를 푸시하면 [`.github/workflows/release-cli.yml`](../../.github/workflows/release-cli.yml)이 실행되어 태그와 `Cargo.toml` 및 두 설치 스크립트의 일치를 검증하고 모든 빌드가 통과한 후 컴파일러 릴리스를 생성합니다. 같은 컴파일러 태그로 GitHub 릴리스를 수동 게시해도 워크플로가 시작되며 해당 릴리스에 파일을 첨부합니다. **Run workflow** 버튼은 선택한 브랜치의 다운로드 가능한 Actions 아티팩트를 빌드합니다.

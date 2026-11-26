@@ -78,7 +78,7 @@ lmdred --version
 | `input.zz` | UTF-8 Drizzle kaynak dosyasının yolu | Geçerli dizindeki `sample.zz` |
 | `output-stem` | `.png` ve `.xml` uzantıları eklenmeden önceki çıktı yolu | Geçerli dizindeki `output` |
 | `-h`, `--help` | Komut satırı yardımını yazdırır |  |
-| `-V`, `--version` | Derleyici sürümünü yazdırır, örneğin `lmdred 1.2.0` |  |
+| `-V`, `--version` | Derleyici sürümünü yazdırır, örneğin `lmdred 1.2.1` |  |
 | `--` | Kalan argümanları dosya yolu olarak işler |  |
 
 <a name="output-paths"></a>
@@ -360,7 +360,7 @@ Düz ve kesikli çizgiler, ölçüm ve komutlar için ayrı oklar, eylem elipsi 
 
 ## Kurulum
 
-Aşağıdaki komutlar, iş akışı dosyaları yükledikten sonra `lmdred-v1.2.0` derleyici sürümünü indirir.
+Aşağıdaki komutlar, iş akışı dosyaları yükledikten sonra `lmdred-v1.2.1` derleyici sürümünü indirir.
 
 Kurucular x64 veya ARM64 mimarisini seçer, arşivi ve SHA-256 toplamını indirip doğrular ve `lmdred` aracını kullanıcı hesabına kurar. Yükseltmek veya kurulumu onarmak için kurucuyu yeniden çalıştırın.
 
@@ -371,14 +371,14 @@ Kurucular x64 veya ARM64 mimarisini seçer, arşivi ve SHA-256 toplamını indir
 Kabuk kurucusunu curl ile indirip çalıştırın.
 
 ```sh
-curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -o install-lmdred.sh
+curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -o install-lmdred.sh
 sh install-lmdred.sh
 ```
 
 wget ile de indirebilirsiniz.
 
 ```sh
-wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -O install-lmdred.sh
+wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -O install-lmdred.sh
 sh install-lmdred.sh
 ```
 
@@ -392,7 +392,7 @@ lmdred --version
 Sürümü veya kurulum dizinini aşağıdaki seçeneklerle belirleyin.
 
 ```sh
-sh install-lmdred.sh --version 1.2.0 --bin-dir "$HOME/.local/bin"
+sh install-lmdred.sh --version 1.2.1 --bin-dir "$HOME/.local/bin"
 sh install-lmdred.sh --no-modify-path
 ```
 
@@ -406,7 +406,7 @@ Kurucuyu PowerShell'den indirip çalıştırın.
 
 ```powershell
 $installer = Join-Path $env:TEMP 'install-lmdred.ps1'
-Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.ps1' -OutFile $installer
+Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.ps1' -OutFile $installer
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 ```
 
@@ -415,7 +415,7 @@ Yeni terminal açıp `lmdred --version` çalıştırın. Kurucu yürütülebilir
 Farklı konum seçmek veya PATH'i kendiniz yönetmek için bu seçenekleri kullanın.
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.0 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
+powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.1 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer -NoModifyPath
 ```
 
@@ -429,12 +429,12 @@ Sisteminize uygun arşivi açın ve yürütülebilir dosyayı PATH'teki bir dizi
 
 | Sistem | İşlemci | Sürüm arşivi |
 | --- | --- | --- |
-| Windows | x64 | `lmdred-v1.2.0-x86_64-pc-windows-msvc.zip` |
-| Windows | ARM64 | `lmdred-v1.2.0-aarch64-pc-windows-msvc.zip` |
-| macOS | Intel | `lmdred-v1.2.0-x86_64-apple-darwin.tar.gz` |
-| macOS | Apple Silicon | `lmdred-v1.2.0-aarch64-apple-darwin.tar.gz` |
-| Linux | x64 | `lmdred-v1.2.0-x86_64-unknown-linux-musl.tar.gz` |
-| Linux | ARM64 | `lmdred-v1.2.0-aarch64-unknown-linux-musl.tar.gz` |
+| Windows | x64 | `lmdred-v1.2.1-x86_64-pc-windows-msvc.zip` |
+| Windows | ARM64 | `lmdred-v1.2.1-aarch64-pc-windows-msvc.zip` |
+| macOS | Intel | `lmdred-v1.2.1-x86_64-apple-darwin.tar.gz` |
+| macOS | Apple Silicon | `lmdred-v1.2.1-aarch64-apple-darwin.tar.gz` |
+| Linux | x64 | `lmdred-v1.2.1-x86_64-unknown-linux-musl.tar.gz` |
+| Linux | ARM64 | `lmdred-v1.2.1-aarch64-unknown-linux-musl.tar.gz` |
 
 Linux ikilileri glibc ve musl dağıtımlarını desteklemek için musl kullanır. Windows sürümleri C çalışma zamanı kitaplığına statik bağlanır. Diyagram oluşturma sistem yazı tiplerini kullanır. Asgari Linux sunucularında veya kapsayıcılarında DejaVu Sans gibi bir sans-serif yazı tipi kurun.
 
@@ -600,8 +600,8 @@ Sürüm iş akışı Windows, macOS ve Linux'ta x64 ve ARM64 için yerel ikilile
 ```sh
 git switch main
 git pull origin main
-git tag lmdred-v1.2.0
-git push origin lmdred-v1.2.0
+git tag lmdred-v1.2.1
+git push origin lmdred-v1.2.1
 ```
 
 Bu etiketi göndermek [`.github/workflows/release-cli.yml`](../../.github/workflows/release-cli.yml) iş akışını tetikler; iş akışı etiketi `Cargo.toml` ve iki kurucuyla doğrular ve tüm derlemeler başarılı olduğunda derleyici sürümünü oluşturur. Aynı etiketle elle GitHub sürümü yayımlamak da iş akışını başlatır ve dosyaları o sürüme ekler. **Run workflow** düğmesi seçilen dal için indirilebilir Actions çıktıları oluşturur.

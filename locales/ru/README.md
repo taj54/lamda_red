@@ -78,7 +78,7 @@ lmdred --version
 | `input.zz` | Путь к исходному файлу Drizzle в UTF-8 | `sample.zz` в текущем каталоге |
 | `output-stem` | Путь вывода без добавляемых расширений `.png` и `.xml` | `output` в текущем каталоге |
 | `-h`, `--help` | Вывести справку по команде |  |
-| `-V`, `--version` | Вывести версию компилятора, например `lmdred 1.2.0` |  |
+| `-V`, `--version` | Вывести версию компилятора, например `lmdred 1.2.1` |  |
 | `--` | Считать оставшиеся аргументы путями к файлам |  |
 
 <a name="output-paths"></a>
@@ -360,7 +360,7 @@ Recover __> Login [zigzag] via right : A non-user might gain access
 
 ## Установка
 
-Команды ниже скачивают релиз компилятора `lmdred-v1.2.0` после загрузки файлов рабочим процессом.
+Команды ниже скачивают релиз компилятора `lmdred-v1.2.1` после загрузки файлов рабочим процессом.
 
 Установщики выбирают x64 или ARM64, скачивают архив и контрольную сумму SHA-256, проверяют архив и устанавливают `lmdred` для текущего пользователя. Для обновления или восстановления запустите установщик снова.
 
@@ -371,14 +371,14 @@ Recover __> Login [zigzag] via right : A non-user might gain access
 Скачайте и запустите установщик с помощью curl.
 
 ```sh
-curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -o install-lmdred.sh
+curl -fL https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -o install-lmdred.sh
 sh install-lmdred.sh
 ```
 
 Его также можно скачать через wget.
 
 ```sh
-wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.sh -O install-lmdred.sh
+wget https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.sh -O install-lmdred.sh
 sh install-lmdred.sh
 ```
 
@@ -392,7 +392,7 @@ lmdred --version
 Выберите версию или каталог установки с помощью следующих параметров.
 
 ```sh
-sh install-lmdred.sh --version 1.2.0 --bin-dir "$HOME/.local/bin"
+sh install-lmdred.sh --version 1.2.1 --bin-dir "$HOME/.local/bin"
 sh install-lmdred.sh --no-modify-path
 ```
 
@@ -406,7 +406,7 @@ sh install-lmdred.sh --no-modify-path
 
 ```powershell
 $installer = Join-Path $env:TEMP 'install-lmdred.ps1'
-Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.0/install.ps1' -OutFile $installer
+Invoke-WebRequest -Uri 'https://github.com/Asncodes-80/lamda_red/releases/download/lmdred-v1.2.1/install.ps1' -OutFile $installer
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 ```
 
@@ -415,7 +415,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File $installer
 Используйте эти параметры для выбора другого каталога или самостоятельной настройки PATH.
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.0 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
+powershell -NoProfile -ExecutionPolicy Bypass -File $installer -Version 1.2.1 -InstallDirectory "$env:LOCALAPPDATA\Programs\lmdred\bin"
 powershell -NoProfile -ExecutionPolicy Bypass -File $installer -NoModifyPath
 ```
 
@@ -429,12 +429,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File $installer -NoModifyPath
 
 | Система | Процессор | Архив релиза |
 | --- | --- | --- |
-| Windows | x64 | `lmdred-v1.2.0-x86_64-pc-windows-msvc.zip` |
-| Windows | ARM64 | `lmdred-v1.2.0-aarch64-pc-windows-msvc.zip` |
-| macOS | Intel | `lmdred-v1.2.0-x86_64-apple-darwin.tar.gz` |
-| macOS | Apple Silicon | `lmdred-v1.2.0-aarch64-apple-darwin.tar.gz` |
-| Linux | x64 | `lmdred-v1.2.0-x86_64-unknown-linux-musl.tar.gz` |
-| Linux | ARM64 | `lmdred-v1.2.0-aarch64-unknown-linux-musl.tar.gz` |
+| Windows | x64 | `lmdred-v1.2.1-x86_64-pc-windows-msvc.zip` |
+| Windows | ARM64 | `lmdred-v1.2.1-aarch64-pc-windows-msvc.zip` |
+| macOS | Intel | `lmdred-v1.2.1-x86_64-apple-darwin.tar.gz` |
+| macOS | Apple Silicon | `lmdred-v1.2.1-aarch64-apple-darwin.tar.gz` |
+| Linux | x64 | `lmdred-v1.2.1-x86_64-unknown-linux-musl.tar.gz` |
+| Linux | ARM64 | `lmdred-v1.2.1-aarch64-unknown-linux-musl.tar.gz` |
 
 Файлы для Linux используют musl и работают в дистрибутивах с glibc и musl. Сборки Windows статически связываются с библиотекой времени выполнения C. Для вывода используются системные шрифты. В минимальном контейнере или на сервере Linux установите шрифт без засечек, например DejaVu Sans.
 
@@ -600,8 +600,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\package-releas
 ```sh
 git switch main
 git pull origin main
-git tag lmdred-v1.2.0
-git push origin lmdred-v1.2.0
+git tag lmdred-v1.2.1
+git push origin lmdred-v1.2.1
 ```
 
 Отправка этого тега запускает [`.github/workflows/release-cli.yml`](../../.github/workflows/release-cli.yml), который проверяет соответствие тега файлам `Cargo.toml` и обоим установщикам и создаёт релиз после успешной сборки всех вариантов. Ручная публикация релиза GitHub с тем же тегом также запускает процесс и прикрепляет файлы к релизу. Кнопка **Run workflow** создаёт скачиваемые артефакты Actions для выбранной ветки.
